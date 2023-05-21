@@ -1,0 +1,33 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+app.swagger_ui:
+    path: /api/doc
+    methods: GET
+    defaults: { _controller: nelmio_api_doc.controller.swagger_ui }
+    
+expenses_collection:
+    path: /api/expenses
+    controller: App\Controller\ExpenseController::create
+    methods: [POST]
+
+expenses_item:
+    path: /api/expenses/{id}
+    controller: App\Controller\ExpenseController::show
+    methods: [GET]
+
+expenses_update:
+    path: /api/expenses/{id}
+    controller: App\Controller\ExpenseController::update
+    methods: [PUT]
+
+expenses_delete:
+    path: /api/expenses/{id}
+    controller: App\Controller\ExpenseController::delete
+    methods: [DELETE]
+# nelmio_api_doc:
+#     resource: '@NelmioApiDocBundle/Resources/config/routing/swagger.yaml'
+#     prefix: /docs
