@@ -30,7 +30,7 @@ This is a sample Symfony application built with Symfony 6, using controllers and
 4. Create the database schema using Doctrine:
 
  1. php bin/console doctrine:database:create
- 2. php bin/console doctrine:migrations:migrate
+ 2. symfony console doctrine:schema:update --force
  3. This will create the necessary database and apply any pending migrations.
 
 4. Development
